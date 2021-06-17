@@ -5,7 +5,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 enum NetworkStatus { Online, Offline }
 
 class NetworkStatusService {
-  StreamController<NetworkStatus> networkStatusController =
+  StreamController<NetworkStatus> networkStatusController 
+  =
       StreamController<NetworkStatus>();
 
   NetworkStatusService() {
