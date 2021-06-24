@@ -1,8 +1,4 @@
-import 'dart:convert';
-
-import 'package:skywamanager/Global&Constants/UserSettingsConstants.dart';
-import 'package:skywamanager/Global&Constants/globalsAndConstants.dart';
-import 'package:dio/dio.dart';class userModel {
+class userModel {
   String gender;
   Name name;
   Location location;
