@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:skywamanager/screens/homeScreen.dart';
 
 const bool kIsWeb = identical(0, 0.0);
 
@@ -15,7 +14,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
-    Navigator.pushReplacementNamed(context, HomeScreen.id);
+    Navigator.of(context).pop();
   }
 
   Widget _buildFullscrenImage() {

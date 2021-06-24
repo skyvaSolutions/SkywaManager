@@ -12,7 +12,7 @@ import 'package:skywamanager/utils/Network_aware.dart';
 import 'package:skywamanager/components/tileWidgets.dart';
 
 class TemplateScreen extends StatefulWidget {
-  static const String id = 'homeScreen';
+  static const String id = 'templateScreen';
   @override
   _TemplateScreenState createState() => _TemplateScreenState();
 }

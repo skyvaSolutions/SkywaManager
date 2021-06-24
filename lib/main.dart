@@ -1,18 +1,21 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
 import 'package:skywamanager/Providers/ThemeProvider.dart';
 import 'package:skywamanager/Providers/searchProvider.dart';
 import 'package:skywamanager/screens/helpScreen.dart';
 import 'package:skywamanager/screens/homeScreen.dart';
+import 'package:skywamanager/screens/manageUserScreen.dart';
+import 'package:skywamanager/screens/newUser.dart';
 import 'package:skywamanager/screens/onBoarding.dart';
+import 'package:skywamanager/screens/operateScreen.dart';
 import 'package:skywamanager/screens/profileEditScreen.dart';
 import 'package:skywamanager/screens/searchPage.dart';
 import 'package:skywamanager/screens/settingScreen.dart';
 import 'package:skywamanager/screens/splashScreen.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 import 'DB/DB.dart';
 
@@ -52,6 +55,9 @@ class MyApp extends StatelessWidget {
           SettingScreen.id: (context) => SettingScreen(),
           ProfileEditPage.id: (context) => ProfileEditPage(),
           SearchPage.id: (context) => SearchPage(),
+          NewUserScreen.id: (context) => NewUserScreen(),
+          OperateScreen.id: (context) => OperateScreen(),
+          ManageUserScreen.id: (context) => ManageUserScreen(),
         },
       ),
     );

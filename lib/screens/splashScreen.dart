@@ -1,22 +1,18 @@
 import 'package:dio/dio.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:open_appstore/open_appstore.dart';
-import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:skywamanager/Global&Constants/UserSettingsConstants.dart';
 import 'package:skywamanager/Global&Constants/globalsAndConstants.dart';
 import 'package:skywamanager/Providers/ThemeProvider.dart';
 import 'package:skywamanager/screens/homeScreen.dart';
-import 'package:skywamanager/screens/onBoarding.dart';
+import 'package:skywamanager/screens/newUser.dart';
 import 'package:skywamanager/services/deviceInfoService.dart';
 import 'package:skywamanager/services/localStorage.dart';
 import 'package:skywamanager/services/locationServices.dart' as Location2;
 import 'package:skywamanager/services/qAPIServices.dart';
-import 'package:skywamanager/services/releaseStatusService.dart';
 import 'package:skywamanager/services/userServices.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -74,10 +70,13 @@ class _SplashScreenState extends State<SplashScreen> {
     print("Did I return");
 
     Location2.Location location = Location2.Location();
+
+    // Just for test purposes
     var response = await Dio().get("https://randomuser.me/api/?results=25");
     for (int i = 0; i < response.data["results"].length; i++) {
       nearbyQs.add(userModel.fromJson(response.data["results"][i]));
     }
+    // End test
     if (await location.getCurrentLocation()) {
       print("returned from location");
     } else {
@@ -86,9 +85,10 @@ class _SplashScreenState extends State<SplashScreen> {
     UserService userService = UserService();
     await userService.getUserInfoFromServer();
 
-    if (userSettings.numUsages.value < 2) {
-      Navigator.pushReplacementNamed(context, OnBoardingPage.id);
+    if (userInfo.phoneNumber == "notSet") {
+      Navigator.pushReplacementNamed(context, NewUserScreen.id);
     } else {
+      print("User " + userInfo.phoneNumber);
       Navigator.pushReplacementNamed(context, HomeScreen.id);
     }
   }
