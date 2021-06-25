@@ -17,7 +17,7 @@ const serverURL = prodServerURL;
 const versionURL = 'https://tideyparams.amberjacklabs.com';
 const apiURL = serverURL + 'api/';
 const companyName = "Skywa Solutions";
-
+const teachingQID = "46181836-EC04-469E-8B2B-1E9F9565E5D0";
 var kIconColor =
     FlexColorScheme.dark(scheme: FlexScheme.deepBlue).toScheme.secondaryVariant;
 const kPrimaryTextColor = Color(0xFF212121);
@@ -33,6 +33,7 @@ List<userModel> nearbyQs = [];
 /*  Global Variables */
 String gLatitude = "";
 String gLongitude = "";
+String gQID = teachingQID;
 
 sendemail() async {
   final Uri _emailLaunchUri =

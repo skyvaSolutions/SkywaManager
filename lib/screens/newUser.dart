@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:skywamanager/Global&Constants/globalsAndConstants.dart';
 import 'package:skywamanager/Providers/ThemeProvider.dart';
 import 'package:skywamanager/components/tileWidgets.dart';
 import 'package:skywamanager/screens/helpScreen.dart';
@@ -55,6 +56,19 @@ class _NewUserScreenState extends State<NewUserScreen> {
                     title: "Sign on to my account",
                     icon: Icons.account_circle,
                     onTap: () => {}),
+                MenuListTile(
+                    title: "Operate Training Business",
+                    icon: Icons.school,
+                    onTap: () => {
+                          gQID = teachingQID
+                          //TODO Gaurav
+                          // Can you call getQMeta with qid=gQiD and store it in a global variable
+                          //    https://shoeboxtx.veloxe.com:36251/api/GetQMetadata?UserToken=95A5B76C-9B05-4992-A44D-DEA8E7AE094C644791499&QID=46181836-EC04-469E-8B2B-1E9F9565E5D0
+                          // When that is complete call getAllReservationsForMyLocation with the same QID
+                          // and store result in a global variable.
+                          // Then transition to operateScreen and just print the list of people from all the reservations.
+                          //  This needs to use the provider package as the reservations will change as people arrive and get served so we will need the operate screen to refresh
+                        }),
 
                 MenuListTile(
                   title: "Help",
