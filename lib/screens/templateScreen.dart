@@ -74,8 +74,8 @@ class _TemplateScreenState extends State<TemplateScreen> {
           ),
         ));
   }
-
 }
+
 class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -87,22 +87,22 @@ class AppDrawer extends StatelessWidget {
           createDrawerItem(
             icon: Icons.account_box,
             text: 'Update Profile',
-         //   onTap: () => Navigator.pushNamed(context, ProfileEditPage.id),
+            //   onTap: () => Navigator.pushNamed(context, ProfileEditPage.id),
           ),
           createDrawerItem(
             icon: Icons.help,
             text: 'Help',
-        //    onTap: () => Navigator.pushNamed(context, HelpScreen.id),
+            //    onTap: () => Navigator.pushNamed(context, HelpScreen.id),
           ),
           createDrawerItem(
             icon: Icons.category,
             text: 'Introduction',
-       //     onTap: () => Navigator.pushNamed(context, OnBoardingPage.id),
+            //     onTap: () => Navigator.pushNamed(context, OnBoardingPage.id),
           ),
           createDrawerItem(
             icon: Icons.settings,
             text: 'Settings',
-        //    onTap: () => Navigator.pushNamed(context, SettingScreen.id),
+            //    onTap: () => Navigator.pushNamed(context, SettingScreen.id),
           ),
           /*
          onTap: () =>
@@ -132,3 +132,4 @@ class AppDrawer extends StatelessWidget {
       ),
     );
   }
+}

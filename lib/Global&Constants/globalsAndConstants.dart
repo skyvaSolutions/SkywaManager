@@ -3,6 +3,7 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
+import 'package:skywamanager/models/QMetaData.dart';
 import 'package:skywamanager/services/qAPIServices.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -11,6 +12,7 @@ import 'DeviceDetailsConstants.dart';
 const appName = "Skywa Solutions"; // replace with app name
 const iOSAppId = "15661597xx"; //replace with app store id
 const supportEmail = "support@amberjacklabs.com";
+QMetaData queueData;
 const prodServerURL = 'https://shoeboxtx.veloxe.com:36251/';
 const localServerURL = 'http://192.168.1.250:5000/';
 const serverURL = prodServerURL;

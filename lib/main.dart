@@ -5,6 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
 import 'package:skywamanager/Providers/ThemeProvider.dart';
+import 'package:skywamanager/Providers/businessDataProvider.dart';
 import 'package:skywamanager/Providers/searchProvider.dart';
 import 'package:skywamanager/screens/helpScreen.dart';
 import 'package:skywamanager/screens/homeScreen.dart';
@@ -29,6 +30,8 @@ void main() async {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => ThemeProvider()),
     ChangeNotifierProvider(create: (context) => searchProvider()),
+    ChangeNotifierProvider(create: (context) => businessDataProvider()),
+
   ], child: MyApp()));
 }
 
