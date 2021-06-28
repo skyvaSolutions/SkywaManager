@@ -5,7 +5,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:skywamanager/Global&Constants/globalsAndConstants.dart';
 import 'package:skywamanager/Providers/ThemeProvider.dart';
 import 'package:skywamanager/Providers/businessDataProvider.dart';
-import 'package:skywamanager/Providers/businessDataProvider.dart';
 import 'package:skywamanager/components/tileWidgets.dart';
 import 'package:skywamanager/screens/helpScreen.dart';
 import 'package:skywamanager/screens/onBoarding.dart';
@@ -74,7 +73,9 @@ class _NewUserScreenState extends State<NewUserScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => operateTrainingBusiness(id: gQID,)));
+                              builder: (context) => operateTrainingBusiness(
+                                    id: gQID,
+                                  )));
                       //TODO Gaurav
                       // Can you call getQMeta with qid=gQiD and store it in a global variable
                       //    https://shoeboxtx.veloxe.com:36251/api/GetQMetadata?UserToken=95A5B76C-9B05-4992-A44D-DEA8E7AE094C644791499&QID=46181836-EC04-469E-8B2B-1E9F9565E5D0

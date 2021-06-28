@@ -7,12 +7,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:skywamanager/Global&Constants/UserSettingsConstants.dart';
 import 'package:skywamanager/Global&Constants/globalsAndConstants.dart';
 import 'package:skywamanager/Providers/ThemeProvider.dart';
+import 'package:skywamanager/models/QMetaData.dart';
 import 'package:skywamanager/screens/homeScreen.dart';
 import 'package:skywamanager/screens/newUser.dart';
 import 'package:skywamanager/services/deviceInfoService.dart';
 import 'package:skywamanager/services/localStorage.dart';
 import 'package:skywamanager/services/locationServices.dart' as Location2;
-import 'package:skywamanager/services/qAPIServices.dart';
 import 'package:skywamanager/services/userServices.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -72,10 +72,10 @@ class _SplashScreenState extends State<SplashScreen> {
     Location2.Location location = Location2.Location();
 
     // Just for test purposes
-    var response = await Dio().get("https://randomuser.me/api/?results=25");
-    for (int i = 0; i < response.data["results"].length; i++) {
-      nearbyQs.add(userModel.fromJson(response.data["results"][i]));
-    }
+//    var response = await Dio().get("https://randomuser.me/api/?results=25");
+//    for (int i = 0; i < response.data["results"].length; i++) {
+//      nearbyQs.add(userModel.fromJson(response.data["results"][i]));
+//    }
     // End test
     if (await location.getCurrentLocation()) {
       print("returned from location");
@@ -89,6 +89,13 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacementNamed(context, NewUserScreen.id);
     } else {
       print("User " + userInfo.phoneNumber);
+      gQID = userInfo.authorizedLocationId;
+      print(gQID);
+      var data = await Dio().get(
+          "https://shoeboxtx.veloxe.com:36251/api/GetQMetadata?UserToken=95A5B76C-9B05-4992-A44D-DEA8E7AE094C644791499&QID=46181836-EC04-469E-8B2B-1E9F9565E5D0");
+      QMetaData temp = QMetaData.fromJson(data.data);
+      print(data.data);
+      queueData = temp;
       Navigator.pushReplacementNamed(context, HomeScreen.id);
     }
   }
