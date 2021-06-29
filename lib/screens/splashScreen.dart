@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -48,7 +47,6 @@ class _SplashScreenState extends State<SplashScreen> {
   String messageTitle = "Empty";
   String notificationAlert = "alert";
 
-  FirebaseMessaging _messaging;
 
   void initAll() async {
     const locationErrorSnackBar = SnackBar(

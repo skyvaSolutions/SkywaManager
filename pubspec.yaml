@@ -37,9 +37,6 @@ dependencies:
   flutter_device_type:
   share:
   http:
-  firebase_messaging: ^10.0.2
-  firebase_core: ^1.2.0
-  overlay_support: ^1.2.1
   cached_network_image: ^3.0.0
   hive: ^2.0.4
   hive_flutter: ^1.0.0
